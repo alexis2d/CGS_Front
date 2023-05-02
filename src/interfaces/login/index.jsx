@@ -1,8 +1,8 @@
-import { Box, Link, Paper, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, Checkbox, FormLabel, Link, Paper, Stack, TextField, Typography } from "@mui/material";
 
 function Login() {
     return (
-        <Box display="flex" alignItems="center" flexDirection="column">
+        <Box display="flex" alignItems="center" flexDirection="column" justifyContent="center" height="100vh">
             <Stack>
                 <Typography variant="h6">
                     Connectez-vous à votre compte
@@ -12,19 +12,26 @@ function Login() {
                 </Typography>
             </Stack>
 
-            <Paper sx={{ width: "375px" }}>
+            <Paper sx={{ maxWidth: "375px", padding: 4 }}>
+                <FormLabel label="Adresse mail" />
                 <TextField
+                    fullWidth
                     required
                     id="outlined-required"
                     label="Login"
-                    defaultValue="Hello World"
                 />
                 <TextField
+                    fullWidth
                     required
                     type="password"
                     id="outlined-required"
                     label="Password"
                 />
+                <Stack>
+                    <Checkbox aria-label="Checkbox" defaultChecked />
+                    <Typography>Mot de passe oublié ?</Typography>
+                </Stack>
+                <Button variant="contained" fullWidth >Se connecter</Button>
             </Paper>
         </Box>
     )
