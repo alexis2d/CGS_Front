@@ -1,10 +1,13 @@
-import { Box, Button, Checkbox, Drawer, FormLabel, Link, Paper, Stack, TextField, Typography } from "@mui/material";
-import { PRIMARY } from "../../palette";
+import { Box, Button, Checkbox, Drawer, FormControlLabel, FormLabel, InputLabel, Link, Paper, Stack, TextField, Typography } from "@mui/material";
+import { GREY, PRIMARY } from "../../palette";
 
 function Login() {
+    const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
     return (
-        <Box display="flex" alignItems="center" flexDirection="column" justifyContent="center" height="100vh">
-            <Stack>
+        <Box bgcolor={GREY.light} display="flex" alignItems="center" flexDirection="column" justifyContent="center" height="100vh">
+            <img src={process.env.PUBLIC_URL + 'img/reservations.png'} />
+            <Stack textAlign="center" gap={1} mb={2}>
                 <Typography variant="h6">
                     Connectez-vous à votre compte
                 </Typography>
@@ -13,23 +16,29 @@ function Login() {
                 </Typography>
             </Stack>
 
-            <Paper sx={{ maxWidth: "375px", padding: 4 }}>
-                <FormLabel label="Adresse mail" />
+            <Paper sx={{ width: "100%", maxWidth: "420px", padding: 4 }}>
+                <InputLabel>Adresse mail</InputLabel>
                 <TextField
                     fullWidth
                     required
                     id="outlined-required"
-                    label="Login"
+                    size="small"
                 />
+                <InputLabel sx={{ mt: 3 }}>Mot de passe</InputLabel>
                 <TextField
                     fullWidth
                     required
                     type="password"
                     id="outlined-required"
-                    label="Password"
+                    size="small"
                 />
-                <Stack>
-                    <Checkbox aria-label="Checkbox" defaultChecked />
+                <Stack flexDirection="row" alignItems="center" justifyContent="space-between" marginTop={4} marginBottom={6}>
+                    <FormControlLabel
+                        label="Se souvenir de moi"
+                        control={
+                            <Checkbox />
+                        }
+                    />
                     <Typography>Mot de passe oublié ?</Typography>
                 </Stack>
                 <Button variant="contained" fullWidth sx={{ bgcolor: PRIMARY.moyen }}
