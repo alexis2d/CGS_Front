@@ -1,4 +1,5 @@
 import { Box, Button, Checkbox, FormLabel, Link, Paper, Stack, TextField, Typography } from "@mui/material";
+import { PRIMARY } from "../../palette";
 
 function Login() {
     return (
@@ -31,7 +32,8 @@ function Login() {
                     <Checkbox aria-label="Checkbox" defaultChecked />
                     <Typography>Mot de passe oublié ?</Typography>
                 </Stack>
-                <Button variant="contained" fullWidth >Se connecter</Button>
+                <Button variant="contained" fullWidth sx={{ bgcolor: PRIMARY.fonce }}
+                >Se connecter</Button>
             </Paper>
         </Box>
     )
