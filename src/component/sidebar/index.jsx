@@ -8,6 +8,7 @@ function Sidebar() {
             sx={{
                 '& .MuiDrawer-paper': {
                     width: 300,
+                    height: "100vh",
                     backgroundColor: PRIMARY.moyen,
                     position: "relative"
                 },
