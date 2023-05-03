@@ -6,7 +6,6 @@ function HomePage() {
     return (
         <Box display="flex">
             <Sidebar />
-            <Card />
             <Typography>Home</Typography>
         </Box>
     )
