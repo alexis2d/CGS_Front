@@ -1,11 +1,13 @@
-import { Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import Sidebar from "../../component/sidebar"
 
 function Sites() {
     return (
         <>
-            <Sidebar />
-            <Typography>Sites</Typography>
+            <Box display="flex">
+                <Sidebar />
+                <Typography>Sites</Typography>
+            </Box>
         </>
     )
 }

@@ -1,11 +1,13 @@
-import { Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import Sidebar from "../../component/sidebar"
 
 function Reservation() {
     return (
         <>
-            <Sidebar />
-            <Typography>Reservation</Typography>
+            <Box display="flex">
+                <Sidebar />
+                <Typography>Resevation</Typography>
+            </Box>
         </>
     )
 }
