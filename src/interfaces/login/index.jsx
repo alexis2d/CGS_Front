@@ -1,5 +1,5 @@
 import { Box, Button, Checkbox, Drawer, FormControlLabel, FormLabel, InputLabel, Link, Paper, Stack, TextField, Typography } from "@mui/material";
-import { GREY, PRIMARY } from "../../palette";
+import { GREY, PRIMARY } from "../../utils/palette";
 import navList, { nav } from "../../utils/navList";
 
 function Login() {

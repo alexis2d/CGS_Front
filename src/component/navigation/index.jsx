@@ -1,28 +1,23 @@
 import { List, ListItem, Stack } from "@mui/material";
+import { pages } from "../../utils/navList";
+import { Link, NavLink } from 'react-router-dom';
 
 function Navigation() {
     return (
         <Stack width="100%">
-
             <List >
-                <ListItem sx={{ color: "white" }}>
-                    <img src={process.env.PUBLIC_URL + 'img/home.png'} alt="logo" width={24} style={{ marginRight: "20px" }} />
-                    Home
-                </ListItem>
-                <ListItem sx={{ color: "white" }}>
-                    <img src={process.env.PUBLIC_URL + 'img/reservations.png'} alt="logo" width={24} style={{ marginRight: "20px" }} />
-                    Réservations en attente
-                </ListItem>
-                <ListItem sx={{ color: "white" }}>
-                    <img src={process.env.PUBLIC_URL + 'img/sites.png'} alt="logo" width={24} style={{ marginRight: "20px" }} />
-                    Sites / Salles
-                </ListItem><ListItem sx={{ color: "white" }}>
-                    <img src={process.env.PUBLIC_URL + 'img/referent.png'} alt="logo" width={24} style={{ marginRight: "20px" }} />
-                    Référents
-                </ListItem><ListItem sx={{ color: "white" }}>
-                    <img src={process.env.PUBLIC_URL + 'img/promotion.png'} alt="logo" width={24} style={{ marginRight: "20px" }} />
-                    Promotions
-                </ListItem>
+                {
+                    pages.map(x => {
+                        return (
+                            <ListItem key={x.libelle}>
+                                <Link to={x.route} style={{ color: "white", textDecoration: "none" }}>
+                                    <img src={x.icone} alt={x.libelle} width={24} style={{ marginRight: "20px" }} />
+                                    {x.libelle}
+                                </Link>
+                            </ListItem>
+                        )
+                    })
+                }
             </List>
         </Stack>
     )

@@ -1,6 +1,6 @@
 import { Box, Stack, Drawer, Avatar } from "@mui/material"
 import Navigation from "../navigation"
-import { PRIMARY } from "../../palette"
+import { PRIMARY } from "../../utils/palette"
 
 function Sidebar() {
     return (
@@ -9,6 +9,7 @@ function Sidebar() {
                 '& .MuiDrawer-paper': {
                     width: 300,
                     backgroundColor: PRIMARY.moyen,
+                    position: "relative"
                 },
             }}
             variant="permanent"
@@ -22,7 +23,7 @@ function Sidebar() {
                     </Stack>
                     <Navigation />
                 </Stack>
-                <Stack backgroundColor={PRIMARY.claire} fullWidth paddingTop={3} paddingBottom={3} width="100%">
+                <Stack backgroundColor={PRIMARY.claire} paddingTop={3} paddingBottom={3} width="100%">
                     <Avatar alt="Monsieur" src={process.env.PUBLIC_URL + 'img/photoUser.png'} />
                 </Stack>
             </Box>
