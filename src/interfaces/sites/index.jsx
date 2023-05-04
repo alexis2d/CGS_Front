@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Avatar, Box, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material"
+import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material"
 import Sidebar from "../../component/sidebar"
 import Default from '../../api/api';
 import { ENTITIES } from '../../api/routeApi';
+import { Link } from 'react-router-dom';
 
 
 
@@ -14,50 +15,47 @@ function Sites() {
 
     useEffect(() => {
         Default.getData(ENTITIES.site.list)
-          .then(response => {
-            setData(response.data);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      }, []);
+            .then(response => {
+                setData(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }, []);
 
-      console.log(data)
-
-
+    console.log(data)
 
 
     return (
-        <>
-            <Box display="flex">
-                <Sidebar />
-                <Typography>Sites</Typography>
-                <Grid item xs={12} md={6}>
-                    <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                        Avatar with text and icon
-                    </Typography>
-                        <List>
-                            <ListItem
-                            secondaryAction={
-                                <IconButton edge="end" aria-label="delete">
-                                {/* <DeleteIcon /> */}
-                                </IconButton>
-                            }
-                            >
-                            <ListItemAvatar>
-                                <Avatar>
-                                {/* <FolderIcon /> */}
-                                </Avatar>
-                            </ListItemAvatar>
-                            <ListItemText
-                                primary="Single-line item"
-                                // secondary={secondary ? 'Secondary text' : null}
-                            />
-                            </ListItem>,
-                        </List>
-                </Grid>
+        <Box display="flex">
+            <Sidebar />
+            <Box>
+                {data.map((site) =>
+                (
+                    <Link to={'detail/' + site.id}>
+                        <Card sx={{ maxWidth: 345 }}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {site.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {site.city}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            <CardActions>
+                                <Button size="small" color="primary">
+                                    Consulter
+                                </Button>
+                            </CardActions>
+                        </Card>
+                    </Link>
+                )
+                )}
+
             </Box>
-        </>
+        </Box>
     )
 }
 export default Sites

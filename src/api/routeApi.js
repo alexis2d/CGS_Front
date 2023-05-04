@@ -1,5 +1,7 @@
 export const ENTITIES = {
-    site : {
-        list : 'sites',
+    site: {
+        list: 'sites',
+        detail: 'sites',
+        classrooms: 'sites'
     }
 }
