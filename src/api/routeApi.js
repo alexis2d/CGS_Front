@@ -9,5 +9,10 @@ export const ENTITIES = {
         list: "reservation",
         detail: "reservation/:id",
         classrooms: "reservation/classroom/:id"
-    }
+    },
+
+    promotion: {
+        list: "promotion",
+        detail: "promotion/:id"
+    },
 }
