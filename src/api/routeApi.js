@@ -3,5 +3,11 @@ export const ENTITIES = {
         list: 'sites',
         detail: 'sites',
         classrooms: 'sites'
+    },
+
+    reservation: {
+        list: "reservation",
+        detail: "reservation/:id",
+        classrooms: "reservation/classroom/:id"
     }
 }

@@ -12,8 +12,11 @@ export const pages = [
     { route: "/", libelle: "Home", icone: "img/home.png", component: <HomePage /> },
     { route: "/reservation", libelle: "Réservation en attente", icone: "img/reservations.png", component: <Reservation /> },
     { route: "/sites", libelle: "Sites", icone: "img/sites.png", component: <Sites /> },
-    { route: "/sites/detail/:id", libelle: "Sites Détail", icone: "img/sites.png", component: <SitesDetail /> },
     { route: "/salles", libelle: "Salles", icone: "img/salles.png", component: <Salles /> },
     { route: "/referents", libelle: "Référents", icone: "img/referent.png", component: <Referents /> },
     { route: "/promotions", libelle: "Promotions", icone: "img/promotion.png", component: <Promotions /> },
+]
+
+export const details = [
+    { route: "/sites/detail/:id", libelle: "Sites Détail", icone: "img/sites.png", component: <SitesDetail /> },
 ]
