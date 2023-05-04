@@ -19,4 +19,5 @@ export const pages = [
 
 export const details = [
     { route: "/sites/detail/:id", libelle: "Sites Détail", icone: "img/sites.png", component: <SitesDetail /> },
+
 ]
