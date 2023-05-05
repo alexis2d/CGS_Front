@@ -4,7 +4,7 @@ import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, Ca
 import Sidebar from "../../component/sidebar"
 import Default from '../../api/api';
 import { ENTITIES } from '../../api/routeApi';
-import { useParams } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 
 function SitesDetail() {
     const [data, setData] = useState([]);
@@ -20,7 +20,6 @@ function SitesDetail() {
             });
     }, [id]);
 
-    console.log(data)
 
     const [dataClassroom, setDataClassroom] = useState([]);
 
@@ -34,7 +33,22 @@ function SitesDetail() {
             });
     }, [id]);
 
-    console.log(dataClassroom)
+
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        Default.deleteData(ENTITIES.site.delete + '/' + id)
+            .then(response => {
+                setData(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+
+
 
     return (
         <Box display="flex">
@@ -52,6 +66,15 @@ function SitesDetail() {
                 <Typography>
                     {data.adress}
                 </Typography>
+                <Box>
+                    <Button onClick={handleSubmit} size="small" color="primary">
+                        Supprimer
+                    </Button>
+                </Box>
+
+            </Box>
+            <Box>
+                <NavLink to={`/sites/edit/${data.id}`}>Modifier le site</NavLink>
             </Box>
             <Box>
                 {dataClassroom.map((siteClassroom) =>
@@ -75,7 +98,6 @@ function SitesDetail() {
                     </Card>
                 )
                 )}
-
             </Box>
         </Box>
     )
