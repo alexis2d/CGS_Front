@@ -7,7 +7,10 @@ export const ENTITIES = {
         edit: 'sites',
         delete: 'sites'
     },
-
+    classroom: {
+        list: 'classroom/list',
+        detail: 'classroom/'
+    },
     reservation: {
         list: "reservation",
         detail: "reservation/:id",

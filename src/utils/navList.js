@@ -5,6 +5,8 @@ import Referents from "../interfaces/referents";
 import Reservation from "../interfaces/reservation";
 import Sites from "../interfaces/sites";
 import Salles from "../interfaces/salles";
+import SallesDetail from "../interfaces/salles/detail.jsx";
+import SallesEdit from "../interfaces/salles/edit.jsx";
 import SitesDetail from "../interfaces/sites/detail";
 import SitesAdd from "../interfaces/sites/add";
 import SitesEdit from "../interfaces/sites/edit";
@@ -27,4 +29,6 @@ export const details = [
     { route: "/sites/detail/:id", component: <SitesDetail /> },
     { route: "/sites/add", component: <SitesAdd /> },
     { route: "/sites/edit/:id", component: <SitesEdit /> },
+    { route: "/salles/:id", component: <SallesDetail /> },
+    { route: "/salles/:id/edit", component: <SallesEdit /> },
 ]
