@@ -48,16 +48,13 @@ function Reservation() {
                                     <Typography>{x.user.nickname}</Typography>
                                     <Typography>{x.classroom.name}</Typography>
                                 </Stack>
-                                <Link to={`edit/${x.id}`}>
-                                    <Button variant="contained" sx={{ width: "100%", bgcolor: PRIMARY.moyen }}>
-                                        Voir la réservation
-                                    </Button>
-                                </Link>
-                                <Link to={`detail/${x.id}`}>
-                                    <Button variant="contained" sx={{ width: "100%", bgcolor: PRIMARY.moyen }}>
-                                        Voir la réservation
-                                    </Button>
-                                </Link>
+                                <Stack flexDirection="row" gap={2}>
+                                    <Link to={`detail/${x.id}`}>
+                                        <Button variant="contained" sx={{ width: "100%", bgcolor: PRIMARY.moyen }}>
+                                            Consulter
+                                        </Button>
+                                    </Link>
+                                </Stack>
                             </ListItem>
                         )
                     })}

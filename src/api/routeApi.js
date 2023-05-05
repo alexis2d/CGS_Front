@@ -20,7 +20,7 @@ export const ENTITIES = {
         list: "reservation",
         detail: "reservation/:id",
         add: "reservation/add",
-        edit: "reservation/edit/:id"
+        edit: "reservation/:id/edit"
     },
     promotion: {
         list: "promotion",

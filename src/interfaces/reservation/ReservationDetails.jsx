@@ -1,4 +1,4 @@
-import { Box, Breadcrumbs, Typography } from "@mui/material"
+import { Box, Breadcrumbs, Button, Typography } from "@mui/material"
 import Sidebar from "../../component/sidebar"
 import { ENTITIES } from "../../api/routeApi";
 import { useParams } from "react-router";
@@ -6,6 +6,7 @@ import { useState } from "react";
 import Default from '../../api/api';
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { PRIMARY } from "../../utils/palette";
 
 function ReservationDetails() {
     const [data, setData] = useState([]);
@@ -39,6 +40,11 @@ function ReservationDetails() {
                 <Typography variant="h4">
                     {data.name}
                 </Typography>
+                <Link to={"/" + ENTITIES.reservation.edit.replace(":id", id)}>
+                    <Button variant="contained" sx={{ width: "100%", bgcolor: PRIMARY.moyen }}>
+                        Modifier
+                    </Button>
+                </Link>
             </Box>
         </Box>
     )
