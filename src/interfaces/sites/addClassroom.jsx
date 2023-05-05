@@ -6,7 +6,7 @@ import Default from "../../api/api";
 import {useParams} from "react-router-dom";
 import _ from "lodash";
 
-function SiteAddSalle() {
+function SitesAddClassroom() {
 
     const { id } = useParams();
 
@@ -57,4 +57,4 @@ function SiteAddSalle() {
         </>
     )
 }
-export default SiteAddSalle
+export default SitesAddClassroom

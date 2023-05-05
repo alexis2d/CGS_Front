@@ -5,7 +5,7 @@ import {ENTITIES} from "../../api/routeApi";
 import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
-function Salles() {
+function Classrooms() {
 
     const [data, setData] = useState([]);
 
@@ -55,4 +55,4 @@ function Salles() {
         </>
     )
 }
-export default Salles
+export default Classrooms

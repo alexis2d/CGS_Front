@@ -5,7 +5,7 @@ import React, {useEffect, useState} from "react";
 import Default from "../../api/api";
 import {useParams, Link} from "react-router-dom";
 
-function SallesDetail() {
+function ClassroomsDetail() {
 
     const [data, setData] = useState([]);
 
@@ -49,4 +49,4 @@ function SallesDetail() {
         </>
     )
 }
-export default SallesDetail
+export default ClassroomsDetail

@@ -6,7 +6,7 @@ import Default from "../../api/api";
 import {useParams} from "react-router-dom";
 import _ from "lodash";
 
-function SallesEdit() {
+function ClassroomsEdit() {
 
     const [data, setData] = useState([]);
 
@@ -58,4 +58,4 @@ function SallesEdit() {
         </>
     )
 }
-export default SallesEdit
+export default ClassroomsEdit
