@@ -23,5 +23,4 @@ export const details = [
     { route: "/sites/detail/:id", libelle: "Sites Détail", icone: "img/sites.png", component: <SitesDetail /> },
     { route: "/sites/add", libelle: "Sites Add", icone: "img/sites.png", component: <SitesAdd /> },
     { route: "/sites/edit/:id", libelle: "Sites Edit", icone: "img/sites.png", component: <SitesEdit /> },
-
 ]

@@ -35,7 +35,7 @@ function Reservation() {
                                     <Typography>{x.user.nickname}</Typography>
                                     <Typography>{x.classroom.name}</Typography>
                                 </Stack>
-                                <Link to={"salle/:id".replace(":id", x.user.id)}>
+                                <Link to={`detail/${x.id}`}>
                                     <Button variant="contained" sx={{ width: "100%", bgcolor: PRIMARY.moyen }}>
                                         Voir la réservation
                                     </Button>
