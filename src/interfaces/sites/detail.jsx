@@ -96,7 +96,7 @@ function SitesDetail() {
             <Box>
                 {dataClassroom.map((siteClassroom) =>
                 (
-                    <NavLink to={`/salles/${siteClassroom.id}`}>
+                    <NavLink to={`/classrooms/${siteClassroom.id}`}>
                         <Card sx={{ maxWidth: 345 }}>
                             <CardActionArea>
                                 <CardContent>

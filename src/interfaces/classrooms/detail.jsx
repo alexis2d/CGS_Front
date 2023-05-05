@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import Default from "../../api/api";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
-function SallesDetail() {
+function ClassroomsDetail() {
 
     const [data, setData] = useState([]);
     const redirect = useNavigate();
@@ -51,4 +51,4 @@ function SallesDetail() {
         </>
     )
 }
-export default SallesDetail
+export default ClassroomsDetail
