@@ -14,8 +14,12 @@ export const ENTITIES = {
         add: "reservation/add",
         classrooms: "reservation/classroom/:id"
     },
+    
     promotion: {
         list: "promotion",
-        detail: "promotion"
+        detail: "promotion",
+        add: "promotion/add",
+        edit: "promotion",
+        delete: "promotion"
     },
 }

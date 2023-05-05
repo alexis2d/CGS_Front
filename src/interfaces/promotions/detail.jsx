@@ -4,7 +4,7 @@ import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, Ca
 import Sidebar from "../../component/sidebar"
 import Default from '../../api/api';
 import { ENTITIES } from '../../api/routeApi';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function PromotionDetail() {
     const [data, setData] = useState([]);
@@ -18,14 +18,26 @@ function PromotionDetail() {
                 setData(response.data);
                 setUser(response.data.user);
                 setClassroom(response.data.classroom);
-                console.log(response.data.user.firstname);
             })
             .catch(error => {
                 console.log(error);
             });
     }, [id]);
 
-    console.log(data);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        Default.deleteData(ENTITIES.promotion.delete + '/' + id)
+            .then(response => {
+                setData(response.data);
+                setUser(response.data.user);
+                setClassroom(response.data.classroom);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
 
     return (
         <Box display="flex">
@@ -49,10 +61,13 @@ function PromotionDetail() {
                 <Typography>
                     Classe attribuée : {classroom.name}
                 </Typography>
-                <Typography>
-                    
-                </Typography>
+                <Box>
+                    <Button onClick={handleSubmit} size="small" color="primary">
+                        Supprimer
+                    </Button>
+                </Box>
             </Box>
+            <Link to={"/promotions/edit/" + id}> Modifier </Link>
         </Box>
     )
 
