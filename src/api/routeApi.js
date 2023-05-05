@@ -8,6 +8,7 @@ export const ENTITIES = {
     reservation: {
         list: "reservation",
         detail: "reservation/:id",
+        add: "reservation/add",
         classrooms: "reservation/classroom/:id"
     },
 
