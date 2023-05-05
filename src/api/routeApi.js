@@ -13,6 +13,6 @@ export const ENTITIES = {
 
     promotion: {
         list: "promotion",
-        detail: "promotion/:id"
+        detail: "promotion"
     },
 }
