@@ -25,6 +25,9 @@ function Promotions() {
     return (
         <Box display="flex">
         <Sidebar />
+        <Box>
+            <Link to="/promotions/add"> Ajouter une promotion </Link>
+        </Box>
         <Box display="grid" gridTemplateColumns="repeat(5, 1fr)" alignItems="center">
             {data.map((promotion) =>
             (

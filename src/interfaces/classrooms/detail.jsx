@@ -1,13 +1,14 @@
-import {Box, Button, Typography} from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import Sidebar from "../../component/sidebar";
-import {ENTITIES} from "../../api/routeApi";
-import React, {useEffect, useState} from "react";
+import { ENTITIES } from "../../api/routeApi";
+import React, { useEffect, useState } from "react";
 import Default from "../../api/api";
-import {useParams, Link} from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 function ClassroomsDetail() {
 
     const [data, setData] = useState([]);
+    const redirect = useNavigate();
 
     const id = useParams().id;
     useEffect(() => {
@@ -25,6 +26,7 @@ function ClassroomsDetail() {
         Default.deleteData(ENTITIES.classroom.delete + id)
             .then(response => {
                 setData(response.data);
+                redirect('/' + ENTITIES.salle.list)
             })
             .catch(error => {
                 console.log(error);

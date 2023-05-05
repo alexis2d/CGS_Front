@@ -3,7 +3,7 @@ import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, Ca
 import Sidebar from "../../component/sidebar"
 import Default from '../../api/api';
 import { ENTITIES } from '../../api/routeApi';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -14,6 +14,8 @@ function SitesAdd() {
     const [city, setCity] = useState("");
     const [adress, setAdress] = useState("");
     const [description, setDescription] = useState("");
+    const redirect = useNavigate();
+
 
 
     const handleSubmit = (e) => {
@@ -24,6 +26,7 @@ function SitesAdd() {
         Default.postData(ENTITIES.site.add, site)
             .then(response => {
                 console.log(response);
+                redirect('/' + ENTITIES.site.list)
             })
             .catch(error => {
                 console.log(error);

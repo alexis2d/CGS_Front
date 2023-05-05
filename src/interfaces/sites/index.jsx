@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 
 
 function Sites() {
-    //const dataApi = Api(ENTITIES.site.list)
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -22,9 +21,6 @@ function Sites() {
                 console.log(error);
             });
     }, []);
-
-    // console.log(data)
-
 
     return (
         <Box display="flex">

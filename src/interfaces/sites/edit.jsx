@@ -3,7 +3,7 @@ import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, Ca
 import Sidebar from "../../component/sidebar"
 import Default from '../../api/api';
 import { ENTITIES } from '../../api/routeApi';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import _ from 'lodash';
 
 
@@ -12,11 +12,7 @@ function SitesEdit() {
 
     const [data, setData] = useState([]);
     const { id } = useParams();
-
-    // const [name, setName] = useState('');
-    // const [city, setCity] = useState('');
-    // const [adress, setAdress] = useState('');
-    // const [description, setDescription] = useState('');
+    const redirect = useNavigate();
 
     useEffect(() => {
         Default.getData(ENTITIES.site.detail + '/' + id)
@@ -36,12 +32,10 @@ function SitesEdit() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // const site = { name, city, adress, description };
-        //console.log(site)
-
         Default.putData(ENTITIES.site.edit + '/' + id, data)
             .then(response => {
                 console.log(response);
+                redirect('/' + ENTITIES.site.list)
             })
             .catch(error => {
                 console.log(error);
