@@ -23,12 +23,15 @@ function Sites() {
             });
     }, []);
 
-    console.log(data)
+    // console.log(data)
 
 
     return (
         <Box display="flex">
             <Sidebar />
+            <Button>
+                <Link to="/sites/add">Ajouter un site</Link>
+            </Button>
             <Box>
                 {data.map((site) =>
                 (
@@ -53,7 +56,6 @@ function Sites() {
                     </Link>
                 )
                 )}
-
             </Box>
         </Box>
     )

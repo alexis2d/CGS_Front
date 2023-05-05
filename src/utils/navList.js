@@ -6,6 +6,8 @@ import Reservation from "../interfaces/reservation";
 import Sites from "../interfaces/sites";
 import Salles from "../interfaces/salles";
 import SitesDetail from "../interfaces/sites/detail";
+import SitesAdd from "../interfaces/sites/add";
+import SitesEdit from "../interfaces/sites/edit";
 
 
 export const pages = [
@@ -19,5 +21,7 @@ export const pages = [
 
 export const details = [
     { route: "/sites/detail/:id", libelle: "Sites Détail", icone: "img/sites.png", component: <SitesDetail /> },
+    { route: "/sites/add", libelle: "Sites Add", icone: "img/sites.png", component: <SitesAdd /> },
+    { route: "/sites/edit/:id", libelle: "Sites Edit", icone: "img/sites.png", component: <SitesEdit /> },
 
 ]

@@ -3,6 +3,9 @@ export const ENTITIES = {
         list: 'sites',
         detail: 'sites',
         classrooms: 'sites'
+        add: 'sites/add',
+        edit: 'sites',
+        delete: 'sites'
     },
 
     reservation: {
@@ -10,7 +13,6 @@ export const ENTITIES = {
         detail: "reservation/:id",
         classrooms: "reservation/classroom/:id"
     },
-
     promotion: {
         list: "promotion",
         detail: "promotion/:id"
