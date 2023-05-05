@@ -20,12 +20,12 @@ function Sidebar() {
             <Box display="flex" flexDirection="column" alignItems="center" padding-top={2} justifyContent="space-between" height="100%">
                 <Stack width="100%">
                     <Stack display="flex" width="100%" alignItems="center" paddingBottom={3} paddingTop={5}>
-                        <img src={process.env.PUBLIC_URL + 'img/logo_cefim_blanc.png'} alt="logo" width={100} />
+                        <img src={'/img/logo_cefim_blanc.png'} alt="logo" width={100} />
                     </Stack>
                     <Navigation />
                 </Stack>
                 <Stack backgroundColor={PRIMARY.claire} paddingTop={3} paddingBottom={3} width="100%">
-                    <Avatar alt="Monsieur" src={process.env.PUBLIC_URL + 'img/photoUser.png'} />
+                    <Avatar alt="Monsieur" src={'/img/photoUser.png'} />
                 </Stack>
             </Box>
         </Drawer>

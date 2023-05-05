@@ -15,12 +15,12 @@ import ReservationDetails from "../interfaces/reservation/ReservationDetails";
 
 
 export const pages = [
-    { route: "/", libelle: "Home", icone: "img/home.png", component: <HomePage /> },
-    { route: "/reservation", libelle: "Réservation en attente", icone: "img/reservations.png", component: <Reservation /> },
-    { route: "/sites", libelle: "Sites", icone: "img/sites.png", component: <Sites /> },
-    { route: "/salles", libelle: "Salles", icone: "img/salles.png", component: <Salles /> },
-    { route: "/referents", libelle: "Référents", icone: "img/referent.png", component: <Referents /> },
-    { route: "/promotions", libelle: "Promotions", icone: "img/promotion.png", component: <Promotions /> },
+    { route: "/", libelle: "Home", icone: "/img/home.png", component: <HomePage /> },
+    { route: "/reservation", libelle: "Réservation en attente", icone: "/img/reservations.png", component: <Reservation /> },
+    { route: "/sites", libelle: "Sites", icone: "/img/sites.png", component: <Sites /> },
+    { route: "/salles", libelle: "Salles", icone: "/img/salles.png", component: <Salles /> },
+    { route: "/referents", libelle: "Référents", icone: "/img/referent.png", component: <Referents /> },
+    { route: "/promotions", libelle: "Promotions", icone: "/img/promotion.png", component: <Promotions /> },
 ]
 
 export const details = [
