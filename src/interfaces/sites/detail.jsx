@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material"
+import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Dialog, DialogActions, DialogContent, DialogTitle, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material"
 import Sidebar from "../../component/sidebar"
 import Default from '../../api/api';
 import { ENTITIES } from '../../api/routeApi';
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
 
 function SitesDetail() {
     const [data, setData] = useState([]);
     const { id } = useParams();
+    const redirect = useNavigate();
 
     useEffect(() => {
         Default.getData(ENTITIES.site.detail + '/' + id)
@@ -34,13 +35,15 @@ function SitesDetail() {
     }, [id]);
 
 
-
+    const [open, setOpen] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         Default.deleteData(ENTITIES.site.delete + '/' + id)
             .then(response => {
                 setData(response.data);
+                setOpen(false);
+                redirect('/' + ENTITIES.site.list)
             })
             .catch(error => {
                 console.log(error);
@@ -70,9 +73,23 @@ function SitesDetail() {
                     <Link to="classroom/add">
                         <Button>Ajouter une salle</Button>
                     </Link>
-                    <Button onClick={handleSubmit} size="small" color="primary">
+                    <Button onClick={() => setOpen(true)} size="small" color="primary">
                         Supprimer
                     </Button>
+                    <Dialog open={open} onClose={() => setOpen(false)}>
+                        <DialogTitle>Confirmation de suppression</DialogTitle>
+                        <DialogContent>
+                            Êtes-vous sûr de vouloir supprimer cet élément ?
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={() => setOpen(false)} color="primary">
+                                Annuler
+                            </Button>
+                            <Button onClick={handleSubmit} color="primary">
+                                Confirmer
+                            </Button>
+                        </DialogActions>
+                    </Dialog>
                 </Box>
 
             </Box>
