@@ -3,7 +3,7 @@
 
 // function Api(endpoint) {
 //     const urlApi = 'http://localhost:8080/api/' + endpoint;
-    
+
 
 
 //     return axios.get(urlApi)
@@ -20,30 +20,39 @@ import axios from 'axios'
 const instance = axios.create({
     baseURL: 'http://localhost:8080/api/',
     headers: {
-        'content-type':'application/octet-stream',
-        'x-rapidapi-host':'example.com',
-        'x-rapidapi-key': process.env.RAPIDAPI_KEY
+        'content-type': 'application/json',
     },
 });
 export default {
     getData: (endpoint) =>
-    instance({
-        'method':'GET',
-        'url': endpoint,
-        'params': {
-            'search':'parameter',
-        },
-    }),
-    postData: (endpoint) =>
-    instance({
-        'method': 'POST',
-        'url': endpoint,
-        'data': {
-            'item1':'data1',
-            'item2':'item2'
-        },
-        'headers': {
-            'content-type':'application/json'  // override instance defaults
-        }
-    })
+        instance({
+            'method': 'GET',
+            'url': endpoint,
+            // 'params': {
+            //     'search': 'parameter',
+            // },
+        }),
+    postData: (endpoint, data) =>
+        instance({
+            'method': 'POST',
+            'url': endpoint,
+            'data': data,
+            'headers': {
+                'content-type': 'application/json'  // override instance defaults
+            }
+        }),
+    putData: (endpoint, data) =>
+        instance({
+            'method': 'PUT',
+            'url': endpoint,
+            'data': data,
+            'headers': {
+                'content-type': 'application/json'  // override instance defaults
+            }
+        }),
+    deleteData: (endpoint) =>
+        instance({
+            'method': 'DELETE',
+            'url': endpoint,
+        }),
 }
