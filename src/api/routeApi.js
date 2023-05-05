@@ -9,7 +9,10 @@ export const ENTITIES = {
     },
     classroom: {
         list: 'classroom/list',
-        detail: 'classroom/'
+        detail: 'classroom/',
+        add: 'classroom/add',
+        edit: 'classroom/',
+        delete: 'classroom/'
     },
     reservation: {
         list: "reservation",

@@ -5,9 +5,10 @@ import Referents from "../interfaces/referents";
 import Reservation from "../interfaces/reservation";
 import Sites from "../interfaces/sites";
 import Salles from "../interfaces/salles";
-import SallesDetail from "../interfaces/salles/detail.jsx";
-import SallesEdit from "../interfaces/salles/edit.jsx";
+import SallesDetail from "../interfaces/salles/detail";
+import SallesEdit from "../interfaces/salles/edit";
 import SitesDetail from "../interfaces/sites/detail";
+import SitesAddSalle from "../interfaces/sites/addClassroom";
 import SitesAdd from "../interfaces/sites/add";
 import SitesEdit from "../interfaces/sites/edit";
 import ReservationEdit from "../interfaces/reservation/ReservationEdit";
@@ -27,6 +28,7 @@ export const details = [
     { route: "/reservation/detail/:id", component: <ReservationDetails /> },
     { route: "/reservation/add", component: <ReservationEdit /> },
     { route: "/sites/detail/:id", component: <SitesDetail /> },
+    { route: "/sites/detail/:id/classroom/add", component: <SitesAddSalle /> },
     { route: "/sites/add", component: <SitesAdd /> },
     { route: "/sites/edit/:id", component: <SitesEdit /> },
     { route: "/salles/:id", component: <SallesDetail /> },
