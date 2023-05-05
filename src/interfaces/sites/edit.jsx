@@ -14,12 +14,6 @@ function SitesEdit() {
     const { id } = useParams();
     const redirect = useNavigate();
 
-
-    // const [name, setName] = useState('');
-    // const [city, setCity] = useState('');
-    // const [adress, setAdress] = useState('');
-    // const [description, setDescription] = useState('');
-
     useEffect(() => {
         Default.getData(ENTITIES.site.detail + '/' + id)
             .then(response => {
@@ -38,9 +32,6 @@ function SitesEdit() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // const site = { name, city, adress, description };
-        //console.log(site)
-
         Default.putData(ENTITIES.site.edit + '/' + id, data)
             .then(response => {
                 console.log(response);
