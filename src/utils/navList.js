@@ -12,6 +12,7 @@ import SitesAddClassroom from "../interfaces/sites/addClassroom";
 import SitesAdd from "../interfaces/sites/add";
 import SitesEdit from "../interfaces/sites/edit";
 import ReservationEdit from "../interfaces/reservation/ReservationAdd";
+import ReservationAdd from "../interfaces/reservation/ReservationAdd";
 import ReservationDetails from "../interfaces/reservation/ReservationDetails";
 import PromotionDetail from "../interfaces/promotions/detail";
 import PromotionAdd from "../interfaces/promotions/add";
