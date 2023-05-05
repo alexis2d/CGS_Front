@@ -9,11 +9,15 @@ import { useParams } from 'react-router-dom';
 function PromotionDetail() {
     const [data, setData] = useState([]);
     const { id } = useParams();
+    const [user, setUser] = useState([]);
+    const [classroom, setClassroom] = useState([])
 ;
     useEffect(() => {
         Default.getData(ENTITIES.promotion.detail + '/' + id)
             .then(response => {
                 setData(response.data);
+                setUser(response.data.user);
+                setClassroom(response.data.classroom);
                 console.log(response.data.user.firstname);
             })
             .catch(error => {
@@ -41,9 +45,9 @@ function PromotionDetail() {
                 </Typography>
                 <Typography>
                 </Typography>
-
+                    Référent : {user.firstname} {user.lastname}
                 <Typography>
-                    
+                    Classe attribuée : {classroom.name}
                 </Typography>
                 <Typography>
                     
