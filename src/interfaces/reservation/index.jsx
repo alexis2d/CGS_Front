@@ -1,4 +1,4 @@
-import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material"
+import { Box, Button, ButtonGroup, List, ListItem, Stack, Typography } from "@mui/material"
 import Sidebar from "../../component/sidebar"
 import Default from '../../api/api';
 import { ENTITIES } from "../../api/routeApi";
@@ -25,7 +25,18 @@ function Reservation() {
     return (
         <Box display="flex">
             <Sidebar />
-            <Box sx={{ width: "60%", mx: "auto" }}>
+            <Box sx={{ width: "60%", mx: "auto", p: 10 }}>
+                <Stack flexDirection="row" justifyContent="space-between" marginBottom={6}>
+                    <Typography variant="h4">Réservation</Typography>
+                    <ButtonGroup>
+                        <Button sx={{ borderColor: PRIMARY.moyen, color: PRIMARY.moyen }} >
+                            Filtrer
+                        </Button>
+                        <Button variant="contained" sx={{ backgroundColor: PRIMARY.moyen, boxShadow: "none" }}>
+                            Ajouter une réservation
+                        </Button>
+                    </ButtonGroup>
+                </Stack>
                 <List sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
                     {data.map(x => {
                         return (
