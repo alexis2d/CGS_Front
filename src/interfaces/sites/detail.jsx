@@ -70,6 +70,9 @@ function SitesDetail() {
                     {data.adress}
                 </Typography>
                 <Box>
+                    <Link to="classroom/add">
+                        <Button>Ajouter une salle</Button>
+                    </Link>
                     <Button onClick={() => setOpen(true)} size="small" color="primary">
                         Supprimer
                     </Button>
