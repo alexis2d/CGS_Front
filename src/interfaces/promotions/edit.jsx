@@ -39,26 +39,29 @@ function PromotionsEdit() {
 
     }
 
+    //style={{marginRight: spacing + 'em'}}
 
     return (
         <Box display="flex">
             <Sidebar />
-            <Box>
-                {<form onSubmit={handleSubmit}>
-                    {_.entries(data).filter(([field]) => field !== "id" && field !== "user" && field !== "classroom").map(([field, fieldValue]) =>
-                    (<>
-                        <label>{field}</label>
-                        <input
-                            name={field}
-                            type="text"
-                            required
-                            value={fieldValue}
-                            onChange={(e) => setData(_.set(_.cloneDeep(data), field, e.target.value))}
-                        />
-                    </>
-                    ))}
-                    <button type='submit'>Modifier</button>
-                </form>}
+            <Box width="100%">
+                <div>
+                    {<form onSubmit={handleSubmit} style={{display: "flex", gap: "0.5rem", flexWrap: "wrap", flexDirection: "column", padding: "3rem", width:"50%", margin:"auto", height:"100%"}}>
+                        {_.entries(data).filter(([field]) => field !== "id" && field !== "user" && field !== "classroom").map(([field, fieldValue]) =>
+                        (<>
+                            <label>{field}</label>
+                            <input
+                                name={field}
+                                type="text"
+                                required
+                                value={fieldValue}
+                                onChange={(e) => setData(_.set(_.cloneDeep(data), field, e.target.value))}
+                                />
+                        </>
+                        ))}
+                        <button type='submit'>Modifier</button>
+                    </form>}
+                </div>
             </Box>
         </Box>
     )

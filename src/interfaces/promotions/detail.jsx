@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material"
+import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Typography} from "@mui/material"
 import Sidebar from "../../component/sidebar"
 import Default from '../../api/api';
 import { ENTITIES } from '../../api/routeApi';
 import { Link, useParams } from 'react-router-dom';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 function PromotionDetail() {
     const [data, setData] = useState([]);
@@ -38,38 +41,45 @@ function PromotionDetail() {
             });
     }
 
+    //style={{color: "white", backgroundColor: "red", padding: "1rem" }}
 
     return (
         <Box display="flex">
             <Sidebar />
-            <Box>
-                <Typography>
-                    Nom de la promotion : {data.name}
-                </Typography>
-                <Typography>
-                    Volume : {data.volume}
-                </Typography>
-                <Typography>
-                    Date de début : {data.startedAt}
-                </Typography>
-                <Typography>
-                    Date de fin : {data.endedAt}
-                </Typography>
-                <Typography>
-                </Typography>
-                    Référent : {user.firstname} {user.lastname}
-                <Typography>
-                    Classe attribuée : {classroom.name}
-                </Typography>
-                <Box>
-                    <Button onClick={handleSubmit} size="small" color="primary">
-                        Supprimer
-                    </Button>
+            <Box width="100%">
+                <Box display="flex" gap="1rem" flexDirection="column" width="50%" margin="auto" backgroundColor="#EEEEEE" padding="2rem"
+                borderRadius="5px" marginTop="200px">
+                    <Typography>
+                        Nom de la promotion : {data.name}
+                    </Typography>
+                    <Typography>
+                        Volume : {data.volume}
+                    </Typography>
+                    <Typography>
+                        Date de début : {data.startedAt}
+                    </Typography>
+                    <Typography>
+                        Date de fin : {data.endedAt}
+                    </Typography>
+                    <Typography>
+                    </Typography>
+                        Référent : {user.firstname} {user.lastname}
+                    <Typography>
+                        Classe attribuée : {classroom.name}
+                    </Typography>
+                    <Box display="flex" gap="2rem">
+
+                        <Button onClick={handleSubmit} variant="contained" color="error" startIcon={<DeleteIcon />}>
+                            Supprimer
+                        </Button>
+                        <Link to={"/promotions/edit/" + id}>   
+                            <Button variant="contained" color="success" startIcon={<EditIcon />}>Modifier</Button>
+                        </Link>
+                    </Box>
                 </Box>
             </Box>
-            <Link to={"/promotions/edit/" + id}> Modifier </Link>
         </Box>
     )
-
+    
 }
 export default PromotionDetail;
