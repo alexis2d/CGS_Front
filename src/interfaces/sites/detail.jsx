@@ -67,6 +67,9 @@ function SitesDetail() {
                     {data.adress}
                 </Typography>
                 <Box>
+                    <Link to="classroom/add">
+                        <Button>Ajouter une salle</Button>
+                    </Link>
                     <Button onClick={handleSubmit} size="small" color="primary">
                         Supprimer
                     </Button>
@@ -79,23 +82,25 @@ function SitesDetail() {
             <Box>
                 {dataClassroom.map((siteClassroom) =>
                 (
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardActionArea>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {siteClassroom.name}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {siteClassroom.capacity}
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                                Consulter
-                            </Button>
-                        </CardActions>
-                    </Card>
+                    <NavLink to={`/classrooms/${siteClassroom.id}`}>
+                        <Card sx={{ maxWidth: 345 }}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {siteClassroom.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {siteClassroom.capacity}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            <CardActions>
+                                <Button size="small" color="primary">
+                                    Consulter
+                                </Button>
+                            </CardActions>
+                        </Card>
+                    </NavLink>
                 )
                 )}
             </Box>

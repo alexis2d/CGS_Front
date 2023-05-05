@@ -1,4 +1,6 @@
 export const ENTITIES = {
+    home: "../",
+
     site: {
         list: 'sites',
         detail: 'sites',
@@ -7,12 +9,18 @@ export const ENTITIES = {
         edit: 'sites',
         delete: 'sites'
     },
-
+    classroom: {
+        list: 'classroom/list',
+        detail: 'classroom/',
+        add: 'classroom/add',
+        edit: 'classroom/',
+        delete: 'classroom/'
+    },
     reservation: {
         list: "reservation",
         detail: "reservation/:id",
         add: "reservation/add",
-        classrooms: "reservation/classroom/:id"
+        edit: "reservation/edit/:id"
     },
     
     promotion: {
