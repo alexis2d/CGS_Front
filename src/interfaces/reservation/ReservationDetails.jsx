@@ -1,10 +1,11 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Breadcrumbs, Typography } from "@mui/material"
 import Sidebar from "../../component/sidebar"
 import { ENTITIES } from "../../api/routeApi";
 import { useParams } from "react-router";
 import { useState } from "react";
 import Default from '../../api/api';
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function ReservationDetails() {
     const [data, setData] = useState([]);
@@ -26,6 +27,15 @@ function ReservationDetails() {
         <Box display="flex">
             <Sidebar />
             <Box padding={10}>
+                <Breadcrumbs aria-label="breadcrumb">
+                    <Link underline="hover" color="inherit" to={ENTITIES.home}>
+                        Home
+                    </Link>
+                    <Link underline="hover" color="inherit" to={"/" + ENTITIES.reservation.list}>
+                        Réservation
+                    </Link>
+                    <Typography color="text.primary">Liste</Typography>
+                </Breadcrumbs>
                 <Typography variant="h4">
                     {data.name}
                 </Typography>
