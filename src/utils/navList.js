@@ -12,8 +12,11 @@ import SitesAddClassroom from "../interfaces/sites/addClassroom";
 import SitesAdd from "../interfaces/sites/add";
 import SitesEdit from "../interfaces/sites/edit";
 import ReservationEdit from "../interfaces/reservation/ReservationAdd";
-import ReservationDetails from "../interfaces/reservation/ReservationDetails";
 import ReservationAdd from "../interfaces/reservation/ReservationAdd";
+import ReservationDetails from "../interfaces/reservation/ReservationDetails";
+import PromotionDetail from "../interfaces/promotions/detail";
+import PromotionAdd from "../interfaces/promotions/add";
+import PromotionsEdit from "../interfaces/promotions/edit";
 
 
 export const pages = [
@@ -26,9 +29,15 @@ export const pages = [
 ]
 
 export const details = [
+    { route: "/promotions/detail/:id", libelle: "Promotion Détail", icone: "img/sites.png", component: <PromotionDetail /> },
+    { route: "/promotions/add", component: <PromotionAdd /> },
+    { route: "/promotions/edit/:id", component: <PromotionsEdit /> },
+
     { route: "/reservation/detail/:id", component: <ReservationDetails /> },
     { route: "/reservation/add", component: <ReservationAdd /> },
     { route: "/reservation/edit/:id", component: <ReservationEdit /> },
+    { route: "/reservation/add", component: <ReservationEdit /> },
+
     { route: "/sites/detail/:id", component: <SitesDetail /> },
     { route: "/sites/detail/:id/classroom/add", component: <SitesAddClassroom /> },
     { route: "/sites/add", component: <SitesAdd /> },
@@ -36,3 +45,5 @@ export const details = [
     { route: "/classrooms/:id", component: <ClassroomsDetail /> },
     { route: "/classrooms/:id/edit", component: <ClassroomsEdit /> },
 ]
+
+

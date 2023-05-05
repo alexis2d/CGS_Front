@@ -22,8 +22,12 @@ export const ENTITIES = {
         add: "reservation/add",
         edit: "reservation/edit/:id"
     },
+    
     promotion: {
         list: "promotion",
-        detail: "promotion/:id"
+        detail: "promotion",
+        add: "promotion/add",
+        edit: "promotion",
+        delete: "promotion"
     },
 }
