@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, List, ListItem, Stack, Typography } from "@mui/material"
+import { Box, Breadcrumbs, Button, ButtonGroup, List, ListItem, Stack, Typography } from "@mui/material"
 import Sidebar from "../../component/sidebar"
 import Default from '../../api/api';
 import { ENTITIES } from "../../api/routeApi";
@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { PRIMARY } from "../../utils/palette";
 
 function Reservation() {
-
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -26,16 +25,19 @@ function Reservation() {
         <Box display="flex">
             <Sidebar />
             <Box sx={{ width: "60%", mx: "auto", p: 10 }}>
+                <Breadcrumbs aria-label="breadcrumb">
+                    <Link underline="hover" color="inherit" to={ENTITIES.home}>
+                        Home
+                    </Link>
+                    <Typography color="text.primary">Réservation</Typography>
+                </Breadcrumbs>
                 <Stack flexDirection="row" justifyContent="space-between" marginBottom={6}>
                     <Typography variant="h4">Réservation</Typography>
-                    <ButtonGroup>
-                        <Button sx={{ borderColor: PRIMARY.moyen, color: PRIMARY.moyen }} >
-                            Filtrer
-                        </Button>
+                    <Link to={`add`}>
                         <Button variant="contained" sx={{ backgroundColor: PRIMARY.moyen, boxShadow: "none" }}>
                             Ajouter une réservation
                         </Button>
-                    </ButtonGroup>
+                    </Link>
                 </Stack>
                 <List sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
                     {data.map(x => {
@@ -46,6 +48,11 @@ function Reservation() {
                                     <Typography>{x.user.nickname}</Typography>
                                     <Typography>{x.classroom.name}</Typography>
                                 </Stack>
+                                <Link to={`edit/${x.id}`}>
+                                    <Button variant="contained" sx={{ width: "100%", bgcolor: PRIMARY.moyen }}>
+                                        Voir la réservation
+                                    </Button>
+                                </Link>
                                 <Link to={`detail/${x.id}`}>
                                     <Button variant="contained" sx={{ width: "100%", bgcolor: PRIMARY.moyen }}>
                                         Voir la réservation

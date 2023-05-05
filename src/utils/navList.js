@@ -11,8 +11,9 @@ import SitesDetail from "../interfaces/sites/detail";
 import SitesAddClassroom from "../interfaces/sites/addClassroom";
 import SitesAdd from "../interfaces/sites/add";
 import SitesEdit from "../interfaces/sites/edit";
-import ReservationEdit from "../interfaces/reservation/ReservationEdit";
+import ReservationEdit from "../interfaces/reservation/ReservationAdd";
 import ReservationDetails from "../interfaces/reservation/ReservationDetails";
+import ReservationAdd from "../interfaces/reservation/ReservationAdd";
 
 
 export const pages = [
@@ -26,7 +27,8 @@ export const pages = [
 
 export const details = [
     { route: "/reservation/detail/:id", component: <ReservationDetails /> },
-    { route: "/reservation/add", component: <ReservationEdit /> },
+    { route: "/reservation/add", component: <ReservationAdd /> },
+    { route: "/reservation/edit/:id", component: <ReservationEdit /> },
     { route: "/sites/detail/:id", component: <SitesDetail /> },
     { route: "/sites/detail/:id/classroom/add", component: <SitesAddClassroom /> },
     { route: "/sites/add", component: <SitesAdd /> },
