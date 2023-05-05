@@ -1,7 +1,7 @@
 import {Box, Button, Typography} from "@mui/material";
 import Sidebar from "../../component/sidebar";
 import {ENTITIES} from "../../api/routeApi";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Default from "../../api/api";
 import {useParams, Link} from "react-router-dom";
 
@@ -20,6 +20,17 @@ function SallesDetail() {
             });
     }, []);
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        Default.deleteData(ENTITIES.classroom.delete + id)
+            .then(response => {
+                setData(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
     return (
         <>
             <Box display="flex">
@@ -30,6 +41,9 @@ function SallesDetail() {
                     <Link to="edit">
                         <Button>Modifier</Button>
                     </Link>
+                    <Button onClick={handleSubmit}>
+                        Supprimer
+                    </Button>
                 </Box>
             </Box>
         </>
