@@ -14,7 +14,6 @@ import SitesEdit from "../interfaces/sites/edit";
 import ReservationEdit from "../interfaces/reservation/ReservationEdit";
 import ReservationDetails from "../interfaces/reservation/ReservationDetails";
 import ReservationAdd from "../interfaces/reservation/ReservationAdd";
-import ReservationDetails from "../interfaces/reservation/ReservationDetails";
 import PromotionDetail from "../interfaces/promotions/detail";
 import PromotionAdd from "../interfaces/promotions/add";
 import PromotionsEdit from "../interfaces/promotions/edit";
